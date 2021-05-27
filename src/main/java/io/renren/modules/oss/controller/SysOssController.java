@@ -27,6 +27,7 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -38,6 +39,7 @@ import java.util.Map;
  * @author Mark sunlightcs@gmail.com
  */
 @RestController
+@ApiIgnore
 @RequestMapping("sys/oss")
 public class SysOssController {
 	@Autowired
@@ -46,7 +48,7 @@ public class SysOssController {
     private SysConfigService sysConfigService;
 
     private final static String KEY = ConfigConstant.CLOUD_STORAGE_CONFIG_KEY;
-	
+
 	/**
 	 * 列表
 	 */
@@ -95,7 +97,7 @@ public class SysOssController {
 
 		return R.ok();
 	}
-	
+
 
 	/**
 	 * 上传文件

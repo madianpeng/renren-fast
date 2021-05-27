@@ -1,8 +1,8 @@
 /**
  * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
+ * <p>
  * https://www.renren.io
- *
+ * <p>
  * 版权所有，侵权必究！
  */
 
@@ -11,6 +11,7 @@ package io.renren.modules.sys.controller;
 import io.renren.common.utils.PageUtils;
 import io.renren.common.utils.R;
 import io.renren.modules.sys.service.SysLogService;
+import io.swagger.annotations.Api;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,22 +28,23 @@ import java.util.Map;
  *
  * @author Mark sunlightcs@gmail.com
  */
+@Api(tags = "系统日志")
 @Controller
 @RequestMapping("/sys/log")
 public class SysLogController {
-	@Autowired
-	private SysLogService sysLogService;
-	
-	/**
-	 * 列表
-	 */
-	@ResponseBody
-	@GetMapping("/list")
-	@RequiresPermissions("sys:log:list")
-	public R list(@RequestParam Map<String, Object> params){
-		PageUtils page = sysLogService.queryPage(params);
+    @Autowired
+    private SysLogService sysLogService;
 
-		return R.ok().put("page", page);
-	}
-	
+    /**
+     * 列表
+     */
+    @ResponseBody
+    @GetMapping("/list")
+    @RequiresPermissions("sys:log:list")
+    public R list(@RequestParam Map<String, Object> params) {
+        PageUtils page = sysLogService.queryPage(params);
+
+        return R.ok().put("page", page);
+    }
+
 }

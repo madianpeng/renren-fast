@@ -3,9 +3,9 @@ spring:
         type: com.alibaba.druid.pool.DruidDataSource
         druid:
             driver-class-name: com.mysql.cj.jdbc.Driver
-            url: jdbc:mysql://madianpeng.top:3306/db2020?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+            url: jdbc:mysql://madianpeng.top:3306/renren?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
             username: root
-            password: 123456
+            password: root
             initial-size: 10
             max-active: 100
             min-idle: 10
@@ -34,16 +34,11 @@ spring:
                         multi-statement-allow: true
 
 
-##多数据源的配置
+#多数据源的配置
 #dynamic:
 #  datasource:
 #    slave1:
-#      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-#      url: jdbc:sqlserver://localhost:1433;DatabaseName=renren_security
-#      username: sa
-#      password: 123456
-#    slave2:
-#      driver-class-name: org.postgresql.Driver
-#      url: jdbc:postgresql://localhost:5432/renren_security
-#      username: renren
-#      password: 123456
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        url: jdbc:mysql://madianpeng.top:3306/db2021?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+#        username: root
+#        password: root
